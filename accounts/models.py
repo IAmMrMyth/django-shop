@@ -5,7 +5,7 @@ from .managers import UserManager
 
 # TODO: complate user model
 class User(AbstractBaseUser,PermissionsMixin):
-    phone_number = models.CharField(max_length=11,validators=[phone_number_validator])
+    phone_number = models.CharField(max_length=11,validators=[phone_number_validator],unique=True)
     is_active = models.BooleanField(default=True)
     objects = UserManager()
     USERNAME_FIELD = "phone_number" 
