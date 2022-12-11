@@ -15,7 +15,7 @@ class User(AbstractBaseUser,PermissionsMixin):
 
 # DONE: write profile model 
 class Profile(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=128)
     last_name = models.CharField(max_length=128)
 
