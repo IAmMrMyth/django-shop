@@ -13,6 +13,8 @@ class Color(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=128)
+    picture = models.ImageField(upload_to="images/categorty/")
+    show_on_home_page = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
