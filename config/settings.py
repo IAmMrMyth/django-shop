@@ -133,3 +133,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # USERMODEL
 AUTH_USER_MODEL = "accounts.User"
+EXPIRY_TIME_OTP = 300

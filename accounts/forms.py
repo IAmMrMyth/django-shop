@@ -9,8 +9,7 @@ class LoginForm(forms.Form):
 
 
 class RegisterForm(forms.Form):
-    phone_number = forms.CharField(max_length=11, validators=[
-                                   phone_number_validator])
+    phone_number = forms.CharField(max_length=11, validators=[phone_number_validator])
     password = forms.CharField(max_length=128)
     password2 = forms.CharField(max_length=128)
 
@@ -32,3 +31,9 @@ class RegisterForm(forms.Form):
             raise forms.ValidationError(
                 "we have this phone number on database", code="duplicate")
         return phone_number
+
+class LoginRequestForm(forms.Form):
+    phone_number = forms.CharField(max_length=11, validators=[phone_number_validator])
+
+class OTPConfirmForm(LoginRequestForm):
+    otp_code = forms.CharField(max_length=5)
