@@ -24,6 +24,7 @@ class Product(models.Model):
     name = models.CharField(max_length=256)
     code = models.CharField(max_length=50)
     color = models.ForeignKey(Color, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL,null=True)
     description = models.TextField()
 
     def __str__(self) -> str:
