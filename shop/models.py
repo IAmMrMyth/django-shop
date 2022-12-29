@@ -26,6 +26,7 @@ class Product(models.Model):
     color = models.ManyToManyField(Color)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL,null=True)
     description = models.TextField()
+    summary = models.TextField()
 
     def __str__(self) -> str:
         return self.name
